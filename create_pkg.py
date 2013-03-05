@@ -158,7 +158,8 @@ def replace(opts, text):
     for key, value in opts.iteritems():
         if not value:
             continue
-        text = text.replace('{{%s}}' % (key.lower(),), value)
+        text = text.replace('{{%s}}' % (key.lower(),), value.lower())
+        text = text.replace('{{%s}}' % (key.upper(),), value.upper())
     return text
 
 
